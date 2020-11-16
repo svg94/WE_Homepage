@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox responsive</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+        .header{
+            order: 1;
+            background-color: #864747;
+        }
+        .secondRow{
+            display: flex;
+            order: 2;
+            height: 700px;
+        }
+        .leftBar{
+            order: 2;
+            flex: 15%;
+            background-color: #0d7322;
+        }
+        .rightBar{
+            order: 4;
+            flex: 15%;
+            background-color: #8e21ab;
+        }
+        .main-middle{
+            order: 3;
+            flex: 70%;
+            background-color: #1b4075;
+        }
+        /*Tablet*/
+        @media screen and (max-width: 769px) {
+            .secondRow{
+                flex-wrap: wrap;
+            }
+            .leftBar, .main-middle{
+                flex: 50%;
+            }
+        }
+        /*Mobile*/
+        @media screen and (max-width: 600px) {
+            .secondRow{
+                flex-wrap: wrap;
+            }
+            .leftBar, .main-middle,.rightBar{
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Flexbox-Champion; Desktop-First</h1>
+    </div>
+
+    <div class="secondRow">
+        <div class="leftBar">
+            <h1>Lefty</h1>
+        </div>
+        <div class="main-middle">
+            <h1>main</h1>
+        </div>
+        <div class="rightBar">
+            <h1>Righty</h1>
+        </div>
+    </div>
+</body>
+</html>
