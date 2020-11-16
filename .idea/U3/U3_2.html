@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid-Champion</title>
+    <style>
+        body{
+            display:grid;
+            grid-template-rows: 20% 1fr;
+            grid-template-columns: 1fr;
+            text-align: center;
+            overflow-y: scroll;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .header{
+            background-color: #864747;
+            order: 0;
+        }
+        .secondRow{
+            display: grid;
+            order: 1;
+            grid-template-rows: repeat(3, 300px);
+            grid-template-columns: 1fr;
+            /*height: 2000px;*/
+        }
+        .main-middle{
+            background-color: #1b4075;
+        }
+        .rightBar{
+            background-color: #8e21ab;
+        }
+        .leftBar{
+            background-color: #0d7322;
+        }
+
+        /*Tablet*/
+        @media screen and (min-width: 600px) {
+            .secondRow{
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 600px 1fr;
+            }
+            .rightBar{
+                grid-row: 2;
+                grid-column: 1 / span 2;
+            }
+        }
+        /*Desktop*/
+        @media screen and (min-width: 769px) {
+            .secondRow{
+                grid-template-columns: 1fr 60% 1fr;
+                grid-template-rows: 700px;
+            }
+            .rightBar{
+                grid-column: 3;
+                grid-row: 1;
+            }
+            .leftBar{
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Gridbox-Champion; Mobile-First</h1>
+    </div>
+
+    <div class="secondRow">
+        <div class="leftBar">
+            <h1>Lefty</h1>
+        </div>
+        <div class="main-middle">
+            <h1>main</h1>
+        </div>
+        <div class="rightBar">
+            <h1>Righty</h1>
+        </div>
+    </div>
+</body>
+</html>
