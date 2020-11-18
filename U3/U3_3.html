@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>JavaScript is guhd</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Six+Caps">
@@ -16,6 +14,14 @@
             height: 1000px;
             grid-template-rows: 7% 73% 20%;
             grid-template-columns: repeat(10, 10%);
+            overflow-y: scroll;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
         .header{
             background-color: #404040;
