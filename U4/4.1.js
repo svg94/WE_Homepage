@@ -18,9 +18,6 @@ function addf(x){
     }
 }
 function applyf(op){
-    return addf();
-}
-function applyf(op){
     return function(x){
         return function (y){
             return op(x,y);
