@@ -8,33 +8,27 @@
 <body>
     <h1 id="head">Sup</h1>
     <script>
-        function identity(x){
-            return x;
-        }
-        function identity_function(x){
-            return function(){
-                return x;
+        var Person ={
+            getAuto: function(){
+                return "Mein Auto: "+this.auto.name;
             }
+        };
+        var Auto ={
+            name: ""
+        };
+        function conflict(car){
+            var ctr=0;
+
         }
-        function add(x,y){
-            return x+y;
-        }
-        function mul(x,y){
-            return x*y;
-        }
-        function addf(x){
-            return function(y){
-                return x+y;
-            }
-        }
-        function applyf(op){
-            return function(x){
-                return function (y){
-                    return op(x,y);
-                }
-            }
-        }
-        document.getElementById("head").innerHTML = applyf(mul)(7)(23);
+        var car1={
+          __proto__: Auto
+        };
+        car1.name = "Benzer";
+        var p1 = {
+            __proto__: Person,
+            auto: car1
+        };
+        document.getElementById("head").innerHTML = p1.getAuto();
     </script>
 </body>
 </html>
