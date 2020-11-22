@@ -22,7 +22,19 @@
         function mul(x,y){
             return x*y;
         }
-        document.getElementById("head").innerHTML = mul(7,8);
+        function addf(x){
+            return function(y){
+                return x+y;
+            }
+        }
+        function applyf(op){
+            return function(x){
+                return function (y){
+                    return op(x,y);
+                }
+            }
+        }
+        document.getElementById("head").innerHTML = applyf(mul)(7)(23);
     </script>
 </body>
 </html>
