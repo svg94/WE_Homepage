@@ -1,20 +1,18 @@
-var Person ={
+/*var Person ={
     getAuto: function(){
         return "Mein Auto: "+this.auto.name;
     }
-};
-var Auto ={
-    name: ""
-};
+};*/
+function Person(autos, name){
+    this.getAutos = autos,
+    this.name = name
+}
+function Auto(marke, id){
+    this.marke = marke,
+    this.id = id;
+}
+
 function conflict(car){
     var ctr=0;
-
+    return true;
 }
-var car1={
-    __proto__: Auto
-};
-car1.name = "Benzer";
-var p1 = {
-    __proto__: Person,
-    auto: car1
-};

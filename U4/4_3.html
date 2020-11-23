@@ -44,17 +44,22 @@
             td.style.border = '1px solid black';
             var tr = tbl.insertRow();
             var td = tr.insertCell();
+            var td2 = tr.insertCell();
             td.appendChild(document.createTextNode('1'));
+            td2.appendChild(document.createTextNode('1'));
             td.style.border = '1px solid black';
-
+            var ctr = 2;
             for(i =0; i < n-1; i++){
-                tmp = BigInt(b);
-                b = BigInt(a+b);
-                a = BigInt(tmp);
+                tmp = Number(b);
+                b = Number(a+b);
+                a = Number(tmp);
                 var tr = tbl.insertRow();
                 var td = tr.insertCell();
-                td.appendChild(document.createTextNode(''+b));
+                var td2 = tr.insertCell();
+                td.appendChild(document.createTextNode(''+b));  //plaintext
+                td2.appendChild(document.createTextNode(''+ctr));  //plaintext
                 td.style.border = '1px solid black';
+                ctr++;
             }
             body.appendChild(tbl);
         }
