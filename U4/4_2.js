@@ -1,18 +1,54 @@
-/*var Person ={
-    getAuto: function(){
-        return "Mein Auto: "+this.auto.name;
-    }
-};*/
-function Person(autos, name){
-    this.getAutos = autos,
-    this.name = name
-}
-function Auto(marke, id){
-    this.marke = marke,
-    this.id = id;
-}
+var persons = [];    //When initiating a person, put it in this list.
 
-function conflict(car){
-    var ctr=0;
-    return true;
+function Person(name) {   //Person proto
+    var person = {  //maybe change to let
+        name: name,
+        cars: []
+    };
+    person.addCar = function(car) {
+        person.cars.push(car);
+    };
+    persons.push(person);
+    return person;
 }
+function Car(marke, id) { // Auto prototype
+    var car = {
+        marke: marke,
+        id: id
+    };
+    return car;
+}
+function conflict() {
+    var return_statement = false;
+    var visited_cars = [];
+    persons.forEach(function(p){  // go through each person
+        p.cars.forEach(function(c){  // and each car of a person
+                if(visited_cars.includes(c)) {      //if the current car is inside the visited then we have a conflict.
+                    return_statement = true;
+                    return;                        //So we return true.
+                }
+                else{
+                    visited_cars.push(c);         //If it's a new car then put it in the visited array.
+                }
+                if(return_statement){
+                    return; //return so that we break out of the middle function
+                }
+            }
+        );
+    });
+    return return_statement;
+}
+//Test-region
+var p1 = new Person("Tim");
+const p2 = new Person("Daniel",[]);
+const car1 = new Car("Ford",2020);
+const car2 = new Car("Nissan",69420);
+p1.addCar(car1);
+p2.addCar(car2);
+console.log(p1.name+" has this car:", p1.cars);
+console.log("print Persons:", persons);
+console.log("James, do we have any conflicts?", conflict());
+
+//conflict should drop yes
+p2.addCar(car1);
+console.log("James, how about now?", conflict());
