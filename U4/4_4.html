@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 4.4</title>
+    <script>
+        var dependencies = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]];
+        var nodeStrings = ["schlafen", "studieren", "essen", "prüfen"];
+        function arrayAlreadyHasArray(arr, subarr){ //To check if Array is inside 2d array.
+            for(var i = 0; i<arr.length; i++){
+                let checker = false;
+                for(var j = 0; j<arr[i].length; j++){
+                    if(arr[i][j] === subarr[j]){
+                        checker = true;
+                    } else {
+                        checker = false;
+                        break;
+                    }
+                }
+                if (checker){
+                    return true;
+                }
+            }
+            return false;
+        }
+        function arraysEqual(a, b) {
+            if (a === b) return true;
+            if (a == null || b == null) return false;
+            if (a.length !== b.length) return false;
+            for (var i = 0; i < a.length; ++i) {
+                if (a[i] !== b[i]) return false;
+            }
+            return true;
+        }
+        function Node(name, edgeNodes){
+            var nodeObject = {
+                name: name,
+                edges: [],
+                vorgaenger: 0
+            }
+            nodeObject.addEdge = function(edge){
+                nodeObject.edges.push(edge);
+                if(nodeObject.name === edge[1]){
+                    nodeObject.vorgaenger+=1;
+                }
+            }
+            nodeObject.rmvEdge = function(pEdge){
+                console.log("nodeObject.edges[i].splice(0,2)");
+                if(arrayAlreadyHasArray(nodeObject.edges,pEdge)){
+                    console.log("nodeObject.edges[i].splice(0,2)");
+                    //nodeObject.edges.filter(edge => edge!==pEdge);
+                    for(var i=0; i< nodeObject.edges.length; i++){
+                        for(var j=0; j < nodeObject.edges[0]; j++){
+                            if(arraysEqual(nodeObject.edges[i],pEdge)){
+                                console.log("nodeObject.edges[i].splice(0,2)");
+                                nodeObject.edges[i].splice(0,2);
+                                console.log(nodeObject.edges[i].splice(0,2));
+                                nodeObject.vorgaenger-=1;
+                            }
+                        }
+                    }
+                }
+            }
+            if(edgeNodes){
+                edgeNodes.forEach(edgeNode =>{
+                    nodeObject.addEdge(edgeNode);
+                })
+            }
+            return nodeObject;
+        }
+        function Graph(nodesAsStrings,dependencies){    //Helper function to create the graph
+            var graph ={
+                nodes: []
+            }
+            nodesAsStrings.forEach(stringNode =>{   //Go through nodes
+                var currentNodesDeps = [];
+                dependencies.forEach(edge =>{       //Collects all edges of the current node
+                    if(edge.includes(stringNode)){
+                        currentNodesDeps.push(edge);
+                    }
+                });
+                var n = new Node(stringNode, currentNodesDeps);
+                graph.nodes.push(n);                       //Adds the current node to the graphs nodes
+            });
+            return graph;
+        }
+        function topsort(nodesAsStrings,dependencies){
+            var graph = new Graph(nodesAsStrings,dependencies);
+            var visited = [];
+            var q = []  //Vorgaenger = 0;
+
+            var i;
+            for(i=0; i < graph.nodes.length; i++){              //Look for Q (vorgänger =0)
+                if(graph.nodes[i].vorgaenger === 0){
+                    q.push(graph.nodes[i]);
+                    graph.nodes.splice(i,2);
+                    i-=1;
+                }
+            }
+            while(q.length > 0){
+                visited.push(q.pop());
+                var j;
+                for(j=0; j <graph.nodes.length; j++){
+                    graph.nodes[j].rmvEdge([visited[visited.length-1].name,graph.nodes[j].name]);
+                    if(graph.nodes[j].vorgaenger === 0){
+                        q.push(graph.nodes[j]);
+                        graph.nodes.splice(j,1);
+                        j-=1;
+                    }
+                }
+            }
+            if(graph.nodes){
+                return visited;
+            }
+            return [];
+        }
+        topsort(nodeStrings,dependencies);
+
+        var graph = new Graph(nodeStrings,dependencies);
+        console.assert(graph.nodes.length===4,{length: graph.nodes.length, errMsg: "You did sth wrong. Graph should have 4 nodes,"});
+        var node = new Node("Hallo",["Hallo","Stop"]);
+        console.assert(node.name==="Hallo",{name: node.name,errMsg: "Node name should be Hallo"});
+        node.rmvEdge(["Hallo","Stop"]);
+        console.assert(node.edges.length===0,{name: node.edges,errMsg: "Node should have no edges."});
+        console.assert(node.vorgaenger===0,{name: node.edges,errMsg: "Node should have no Vorgänger."});
+    </script>
+</head>
+<body>
+    <h1>Look inside console.</h1>
+</body>
+</html>
