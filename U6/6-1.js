@@ -81,6 +81,41 @@ var counterf =(function (x){
         }
     };
 });
+var revocable = (function(action){
+    var revoked = false;
+    return{
+        invoke: function(x){
+          if(revoked){
+              throw "Error. Revoked"
+          }
+          return action(x);
+        },
+        revoke: function (){
+            revoked = true;
+        }
+
+    };
+});
+var wrapper = (function(){
+    var arr = [1,2,3];
+    return{
+        get: function(){
+            return arr;
+        },
+        store: function(toStore){
+            arr.push(toStore);
+        },
+        append: function(toStore){
+            arr.push(toStore);
+        }
+    }
+});
+
+
+var stuff = revocable(console.log);
+stuff.invoke(7);
+stuff.revoke();
+stuff.invoke(8);
 
 Number.prototype.add = methodize(add);
 //console.log((3).add(4));
