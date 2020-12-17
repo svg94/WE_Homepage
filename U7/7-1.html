@@ -28,6 +28,9 @@
 </div>
 <table class="performanceTable" id="pTableID">
     <tr>
+        <th colspan="2">Not so interesting results because the functions only gets called one time.</th>
+    </tr>
+    <tr>
         <th>DOM-function</th>
         <th>time/duration</th>
     </tr>
@@ -46,6 +49,32 @@
     <tr>
         <td>outerHTML</td>
         <td id="valueOuterHTML">err</td>
+    </tr>
+</table>
+<br>
+<table class="performanceTable" id="pTableBetterID">
+    <tr>
+        <th id="headerOfBetterTable" colspan="2">More interesting results</th>
+    </tr>
+    <tr>
+        <th>DOM-function</th>
+        <th>time/duration</th>
+    </tr>
+    <tr>
+        <td>innerHTML</td>
+        <td id="BetterValueInnerHTML">err</td>
+    </tr>
+    <tr>
+        <td>innerText</td>
+        <td id="BetterValueInnerText">err</td>
+    </tr>
+    <tr>
+        <td>textContent</td>
+        <td id="BetterValueTextContent">err</td>
+    </tr>
+    <tr>
+        <td>outerHTML</td>
+        <td id="BetterValueOuterHTML">err</td>
     </tr>
 </table>
 <script src="./7-1.js"></script>
