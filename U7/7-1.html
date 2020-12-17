@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 7.1</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .performanceTable{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        .bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="pageToTest" id="testID">
+    <h1> HI. This page tests how fast different functions can process me </h1>
+
+    <p> Why? I don't know man. This is a task.<br>You do tasks. That's what I know.<br>So why am I not at least giving you some useless information that you can share with your friends? Listen.</p>
+    <p class="bold">Brains of ducks have the size of a pea. You're welcome :)</p>
+</div>
+<table class="performanceTable">
+    <tr>
+        <th>DOM-function</th>
+        <th>time/duration (ms)</th>
+    </tr>
+    <tr>
+        <td>innerHTML</td>
+        <td id="valueInnerHTML">err</td>
+    </tr>
+    <tr>
+        <td>innerText</td>
+        <td id="valueInnerText">err</td>
+    </tr>
+    <tr>
+        <td>textContent</td>
+        <td id="valueTextContent">err</td>
+    </tr>
+    <tr>
+        <td>outerHTML</td>
+        <td id="valueOuterHTML">err</td>
+    </tr>
+</table>
+<script src="./7-1.js"></script>
+</body>
+</html>
