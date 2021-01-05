@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 8_2</title>
+</head>
+<body>
+<h1>Fetched Text right here:</h1>
+<p id="textOutput"></p>
+<script>
+    const textOutput = document.getElementById("textOutput");
+    let textData = [];
+
+    async function fetchText(url){
+        const text = await fetch(url);
+        return await text.text();
+    }
+    function splitAndBuild(arr){
+        let spliitedA = arr[0].split("\r\n");
+        let spliitedB = arr[1].split("\r\n");
+        let dataOutput ="";
+        let i = 0;
+        spliitedA.forEach(line=>{                   //Vorausgesetzt, die Textdateien haben genau gleich viele Zeilen.
+            dataOutput+=line+spliitedB[i]+"\r\n";
+            i+=1;
+        })
+        textOutput.innerText+=dataOutput;
+        console.log(textData);
+    }
+    async function run(){
+        textData.push(await fetchText("./A.txt"));
+        textData.push(await fetchText("./B.txt"));
+        splitAndBuild(textData);
+    }
+    run();
+</script>
+</body>
+</html>
