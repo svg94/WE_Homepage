@@ -1,6 +1,5 @@
 body{
     margin: 0;
-    overflow-y: scroll;
 }
 .bodyContainer{
     min-height: 800px;
@@ -28,15 +27,25 @@ body{
     padding-right: 20px;
 }
 .middleBox{
-    background-color: #6b6b6b;
     border: black solid 1px;
     display: flex;
     flex: 75%;
-
 }
 .leftBar{
     flex: 15%;
     background-color: #bf7f80;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.bleft{
+    background-color: #8c5757;
+    position: relative;
+    width: 60%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    color: white;
 }
 .middleMain{
     flex: 70%;
@@ -71,5 +80,7 @@ a{
 }
 /*Mobile*/
 @media screen and (max-width: 767px) {
-
+    .middleBox{
+        flex-direction: column;
+    }
 }
