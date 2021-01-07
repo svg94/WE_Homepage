@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weiterleitung</title>
+</head>
+<body>
+<button id="first">First Solution</button>
+<button id="second">Big Int Solution</button>
+<script>
+    function visitPage(url){
+        window.open(url, "_self");
+    }
+    document.getElementById("first").addEventListener("click",function(){
+        visitPage("./4_3.html");
+    });
+    document.getElementById("second").addEventListener("click",function(){
+        visitPage("./4_3-BigInt.html");
+    });
+</script>
+</body>
+</html>

@@ -55,6 +55,7 @@ body{
 }
 #mmp{
     padding-left: 15px;
+    padding-right: 15px;
 }
 .rightBar{
     flex: 15%;

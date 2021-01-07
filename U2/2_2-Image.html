@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 2</title>
+    <style>
+        .imgHBRS{
+            position: relative;
+            width: 100%;
+            border-style: solid;
+            border-width: 2px;
+            padding: 4px;
+        }
+        input[type="checkbox"] ~ .imgHBRS {
+            display: none;
+        }
+        input[type="checkbox"]:checked ~ .imgHBRS {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<h1>Übung 2.2</h1>
+
+
+<input type="checkbox" id="checkImg">
+<label for="checkImg"> hide and show via checkbox</label>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Hochschule_Bonn-Rhein-Sieg_Wolfgang_G%C3%B6ddertz_Induktion.jpg" class="imgHBRS">
+
+</body>
+</html>

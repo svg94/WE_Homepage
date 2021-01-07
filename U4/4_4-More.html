@@ -23,6 +23,15 @@
             }
             return false;
         }
+        function arraysEqual(a, b) {
+            if (a === b) return true;
+            if (a == null || b == null) return false;
+            if (a.length !== b.length) return false;
+            for (var i = 0; i < a.length; ++i) {
+                if (a[i] !== b[i]) return false;
+            }
+            return true;
+        }
         function Node(name, edgeNodes){
             var nodeObject = {
                 name: name,
@@ -36,9 +45,20 @@
                 }
             }
             nodeObject.rmvEdge = function(pEdge){
+                console.log("nodeObject.edges[i].splice(0,2)");
                 if(arrayAlreadyHasArray(nodeObject.edges,pEdge)){
-                    nodeObject.edges.filter(edge => edge!==pEdge);
-                    nodeObject.vorgaenger-=1;
+                    console.log("nodeObject.edges[i].splice(0,2)");
+                    //nodeObject.edges.filter(edge => edge!==pEdge);
+                    for(var i=0; i< nodeObject.edges.length; i++){
+                        for(var j=0; j < nodeObject.edges[0]; j++){
+                            if(arraysEqual(nodeObject.edges[i],pEdge)){
+                                console.log("nodeObject.edges[i].splice(0,2)");
+                                nodeObject.edges[i].splice(0,2);
+                                console.log(nodeObject.edges[i].splice(0,2));
+                                nodeObject.vorgaenger-=1;
+                            }
+                        }
+                    }
                 }
             }
             if(edgeNodes){
@@ -73,7 +93,7 @@
             for(i=0; i < graph.nodes.length; i++){              //Look for Q (vorgänger =0)
                 if(graph.nodes[i].vorgaenger === 0){
                     q.push(graph.nodes[i]);
-                    graph.nodes.splice(i,1);
+                    graph.nodes.splice(i,2);
                     i-=1;
                 }
             }
@@ -85,17 +105,27 @@
                     if(graph.nodes[j].vorgaenger === 0){
                         q.push(graph.nodes[j]);
                         graph.nodes.splice(j,1);
-                        //j-=1;
+                        j-=1;
                     }
                 }
             }
-            return visited;
+            if(graph.nodes){
+                return visited;
+            }
+            return [];
         }
-        var result =topsort(nodeStrings,dependencies);
-        console.log("Topsort: ",result);
+        topsort(nodeStrings,dependencies);
+
+        var graph = new Graph(nodeStrings,dependencies);
+        console.assert(graph.nodes.length===4,{length: graph.nodes.length, errMsg: "You did sth wrong. Graph should have 4 nodes,"});
+        var node = new Node("Hallo",["Hallo","Stop"]);
+        console.assert(node.name==="Hallo",{name: node.name,errMsg: "Node name should be Hallo"});
+        node.rmvEdge(["Hallo","Stop"]);
+        console.assert(node.edges.length===0,{name: node.edges,errMsg: "Node should have no edges."});
+        console.assert(node.vorgaenger===0,{name: node.edges,errMsg: "Node should have no Vorgänger."});
     </script>
 </head>
 <body>
-<h1>Look inside console.</h1>
+    <h1>Look inside console.</h1>
 </body>
 </html>
