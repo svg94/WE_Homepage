@@ -8,6 +8,7 @@ let leftButtons = [];
 for(let i = 0; i < 5; i++){
     leftButtons.push(document.getElementById("bleft"+(i+1)));
 }
+let h1mid = document.getElementById("h1mid");
 let midButton = document.getElementById("midB");
 const questionsSet = [];
 const answersSet = [];
@@ -47,6 +48,7 @@ function placeContent(){
     let subtopic =this.innerText.toLowerCase();
     removeMiddleContent();
     //questionp.innerText = data[currentExercise][subtopic]["content"]["question"];
+    h1mid.innerText = subtopic;
     let questions = data[currentExercise][subtopic]["content"]["questions"];
     let answers = data[currentExercise][subtopic]["content"]["answers"];
     for(let i =0; i< questions.length; i++){
@@ -64,6 +66,7 @@ function visitPage(){
     window.open(currentPage, "_self");
 }
 function removeMiddleContent(){
+    h1mid.innerText = "";
     midButton.style.display = "none";
     currentPage = "";
     questionsSet.forEach(p=>p.innerHTML="");
