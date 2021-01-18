@@ -288,13 +288,13 @@
   },
   "exercise 10": {
     "10.1": {
-      "content": {"questions": [],
-        "answers": []
+      "content": {"questions": ["Registrierungsformular"],
+        "answers": ["Yes"]
       },
       "references": [
-        ""
+        "Folie 38 Kapitel 10"
       ],
-      "solutionpage": "Yes"
+      "solutionpage": "./Homepage/U10/10-1.php"
     },
     "10.2": {
       "content": {"questions": [],

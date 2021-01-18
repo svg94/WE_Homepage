@@ -31,7 +31,13 @@ function fillButtonNames(){
     if(!samepage){
         removeMiddleContent();
     }
-    const exercise = "exercise "+this.innerText[this.innerText.length-1];
+    let end = this.innerText[this.innerText.length-2]+this.innerText[this.innerText.length-1];
+    if(end === "10"){
+        exercise = "exercise "+end;
+    }else{
+        exercise = "exercise "+this.innerText[this.innerText.length-1];
+    }
+
     console.log(exercise);
     let len = Object.keys(data[exercise]).length;
     leftButtons.forEach(btn =>{
@@ -79,8 +85,8 @@ async function fetchData(url){
     return await data.json();
 }
 async function run(){
-    //data = await fetchData("./Homepage/IndexStatic/data.json");
-    data = await fetchData("./data.json");
+    data = await fetchData("./Homepage/IndexStatic/data.json");
+    //data = await fetchData("./data.json");
     topButtons.forEach(btn =>btn.addEventListener("click", fillButtonNames));
     leftButtons.forEach(btn => {
         btn.addEventListener("click",placeContent);
