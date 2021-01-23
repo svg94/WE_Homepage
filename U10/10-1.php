@@ -24,9 +24,9 @@
         $account = $_POST['account'];
         $password = $_POST['password'];
         $file = './accountData.csv';
-        $new_line =  $account . ',' . $password . '\n';
+        $new_line =  hash("sha384",$account) . ',' . hash("sha384",$password) . PHP_EOL;
 
-        if( file_put_contents($file, $new_line, FILE_APPEND)){
+        if( file_put_contents($file, $new_line, FILE_APPEND | LOCK_EX)){
             echo "<script> alert(\"Registered successfully!\") </script>";
         }
     }

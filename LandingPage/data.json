@@ -297,13 +297,13 @@
       "solutionpage": "./Homepage/U10/10-1.php"
     },
     "10.2": {
-      "content": {"questions": [],
-        "answers": []
+      "content": {"questions": ["Login"],
+        "answers": ["Yes"]
       },
       "references": [
         ""
       ],
-      "solutionpage": "Yes"
+      "solutionpage": "./Homepage/U10/10-2.php"
     },
     "10.3": {
       "content": {"questions": [],
