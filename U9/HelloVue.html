@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #lamp{
+            text-align: center;
+            border: 3px solid;
+            padding: 2rem;
+            width: 10rem;
+            border-radius: 3rem;
+        }
+        #lamp2{
+            text-align: center;
+            border: 3px solid;
+            padding: 2rem;
+            width: 10rem;
+            border-radius: 3rem;
+        }
+        .on{
+            background-color: yellow;
+            border-style: dashed;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-on:mousemove="coords">
+        <h1>1. Thema {{title}}</h1>
+        <h2>2. SubThema {{title}}</h2>
+        <p>paragraph über {{title}}</p>
+        <button @click="world">Change Title</button>
+        <h3>Zahl: {{result}}</h3>
+        <h4>{{count }} + 3 = {{count +3}} ist {{result}}</h4>
+        <button v-on:click="inc">Inc</button>
+        <button v-on:click="dec">Dec</button>
+        <h1>X: {{x}},  Y: {{y}}</h1>
+        <button @click="toggle">Toggle Lamp</button>
+        <h1 :class="{ on }" id="lamp">Lamp</h1>
+        <h1 :class="{ on }" :style="look" id="lamp2">Lamp2</h1>
+        <h1>Lifecycle Hooks: "{{placeholde}}"</h1>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                title: "Hello World",
+                count: 0,
+                x: 0,
+                y:0,
+                on: false,
+                placeholde: "This a placeholder. Wait."
+            },
+            created: async function(){
+                const remoteData = await fetch("./data. json",
+                    {mode: "cors"}
+                );
+                const remoteObject = await remoteData.json();
+                this.placeholde = remoteObject.title;
+            },
+            methods:{
+                world: function(){this.title = "World"},
+                inc: function (){this.count+=1},
+                dec: function (){this.count-=1},
+                coords: function (event){this.x = event.clientX; this.y = event.clientY;},
+                toggle: function (){this.on = !this.on;}
+            },
+            computed:{
+                result: function (){return this.count+3 > 9?"zweistellig":"einstellig"},
+                look: function (){return this.on ? {backgroundColor: "yellow",borderStyle: "dashed"}: ""}
+            }
+        });
+    </script>
+</body>
+</html>

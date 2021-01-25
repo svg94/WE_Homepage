@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Component 1</h1>
+        <io></io>
+        <br>
+        <br>
+        <h1>Component 2</h1>
+        <io></io>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        Vue.component("io",{
+            template: "<div><input type=\"text\" v-model=\"inp\"> <p>{{charlen}}</p> <p>{{whitespaces}}</p> <p>{{wordscount}}</p></div>",
+            data: function (){
+                return {
+                    inp: "",
+
+                }
+            },
+            computed: {
+                charlen: function (){
+                    let noWspace = this.inp.replace(/\s/g, "");
+                    return noWspace.length;
+                },
+                whitespaces: function (){
+                    let wSpace = this.inp.split(" ").length-1;
+                    return wSpace;
+                },
+                wordscount: function (){
+                    if (this.inp === ""){return 0}
+                    let wordCount = this.inp.match(/(\w+)/g).length;
+                    return wordCount;}
+            }
+        });
+        new Vue({
+            el: "#app"
+        });
+    </script>
+</body>
+</html>
