@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .leftBar{
-  flex: 15%;
+  grid-column: 1 / span 3;
   background-color: #d0d0d0;
   border: 1px solid #999999;
   display: flex;

@@ -25,16 +25,20 @@ export default {
 
 <style scoped>
 .rightBar{
-  flex: 15%;
+  grid-column: 18 / span 3;
   background-color: #d0d0d0;
   color: black;
   border: 1px solid #999999;
 }
 #headP{
   font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .refs{
   margin-left: 5px;
   margin-right: 5px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 </style>

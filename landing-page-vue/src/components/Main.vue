@@ -22,12 +22,14 @@ export default {
 
 <style scoped>
 .Main{
-  display: flex;
-  flex: 75%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(20,5%);
+  overflow-x: hidden;
 }
 @media screen and (max-width: 767px) {
   .Main{
-    flex-direction: column;
+    /*flex-direction: column;*/
   }
 }
 </style>
