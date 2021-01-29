@@ -1,16 +1,31 @@
 <template>
   <div class="leftBar">
-    <button id="bleft1" class="bleft"></button>
-    <button id="bleft2" class="bleft"></button>
-    <button id="bleft3" class="bleft"></button>
-    <button id="bleft4" class="bleft"></button>
-    <button id="bleft5" class="bleft"></button>
+    <button v-for="(text,index) in buttons" :key="text" class="bleft" :id="'bleft'+index" @click="pickSubtopic($event)">{{text}}</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "LeftBar"
+  name: "LeftBar",
+  methods:{
+    pickSubtopic(event){
+      let subtopic = event.target.innerText;
+      this.$store.commit("setCurrentSubTopic",subtopic);
+    }
+  },
+  computed:{
+    buttons(){
+      let topic = this.$store.state.currentTopic;
+      let subtopics= [];
+      if(topic !== ""){
+        subtopics = Object.keys(this.$store.state.webdata[topic]);
+      }
+      return subtopics;
+    },
+    getTopic(){
+      return this.$store.state.currentTopic;
+    }
+  }
 }
 </script>
 
@@ -32,7 +47,7 @@ export default {
   margin: 5px;
   border-radius: 8px;
   color: white;
-  display: none;
+  display: inline-block;
   align-self: center;
 }
 .bleft:hover{
@@ -42,7 +57,7 @@ export default {
   background-color: #568679;
   transform: rotate(5deg);
 }
-#bleft1{
+#bleft0{
   margin-top: 10px;
 }
 </style>

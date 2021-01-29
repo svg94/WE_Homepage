@@ -1,14 +1,39 @@
 <template>
   <div class="middleMain" id="middleMain">
-    <h1 id="h1mid">Überschrift</h1>
-    <button class="bmid" id="midB">Visit Solution</button>
-
+    <h1 id="h1mid">{{ getSubtopic }}</h1>
+    <div id="MainText" v-for="(question, index) in getQuestions" :key="index">
+      <p class="question">{{question}}</p>
+      <p class="answer">{{getAnswers[index]}}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Middle"
+  name: "Middle",
+  methods:{
+    getText(str){
+      let topic = this.$store.state.currentTopic;
+      let subtopic = this.$store.state.currentSubTopic;
+      let printedText = "";
+      if(topic !== "" && subtopic !== ""){
+        printedText = this.$store.state.webdata[topic][subtopic]["content"][str];
+        console.log(printedText);
+      }
+      return printedText;
+    }
+  },
+  computed:{
+    getSubtopic(){
+      return this.$store.state.currentSubTopic;
+    },
+    getQuestions(){
+      return this.getText("questions");
+    },
+    getAnswers(){
+      return this.getText("answers");
+    }
+  }
 }
 </script>
 
@@ -22,29 +47,16 @@ export default {
   border-top: 1px solid #999999;
 }
 #h1mid{
+  text-align: left;
   padding-right: 15px;
   padding-left: 15px;
 }
-#midB{
-  display: none;
-  background-color: #a2a2a2;
-  position: relative;
-  width: 30%;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  color: white;
-  display: none;
+#MainText{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
 }
-#midB:hover{
-  background-color: #858585;
-}
-#midB:active{
-  background-color: #568679;
-  transform: rotate(3deg);
-}
-.mmp{
-  padding-left: 15px;
-  padding-right: 15px;
+.question{
+  font-weight: bold;
 }
 </style>

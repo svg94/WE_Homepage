@@ -1,15 +1,25 @@
 <template>
   <div class="rightBar">
-    <p>Additional Information: Links to external sources</p>
-    <p id="source"></p>
-    <p id="">Random Funfact:</p>
-    <p id="rdmFunFact"></p>
+    <p id="headP">Additional Information: Links to external sources</p>
+    <p v-for="(ref,index) in getRefs" :key="ref" :id="'source'+index" class="refs">{{ref}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "RightBar"
+  name: "RightBar",
+  computed:{
+    getRefs(){
+      let topic = this.$store.state.currentTopic;
+      let subtopic = this.$store.state.currentSubTopic;
+      let printedText = "";
+      if(topic !== "" && subtopic !== ""){
+        printedText = this.$store.state.webdata[topic][subtopic]["references"];
+        console.log(printedText.toString());
+      }
+      return printedText;
+    }
+  }
 }
 </script>
 
@@ -20,7 +30,11 @@ export default {
   color: black;
   border: 1px solid #999999;
 }
-#rdmFunFact{
-  align-self: baseline;
+#headP{
+  font-weight: bold;
+}
+.refs{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 </style>

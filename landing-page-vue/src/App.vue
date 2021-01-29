@@ -7,16 +7,23 @@
 </template>
 
 <script>
+import store from "./store";
 import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
+  store:store,
   components: {
     Header,
     Main,
     Footer
+  },
+  async created(){
+    const fetchedData = await fetch("./json/data.json",{mode:"cors"});
+    const toJson = await fetchedData.json();
+    this.$store.state.webdata = toJson;
   }
 }
 </script>
@@ -29,7 +36,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-  min-height: 800px;
+  /*min-height: 800px;*/
   height: 100vh;
   display: grid;
   grid-template-rows: 10% 85% 5%;

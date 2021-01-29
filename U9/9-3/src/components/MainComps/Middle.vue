@@ -1,7 +1,7 @@
 <template>
   <div class="middleMain" id="middleMain">
     <h1 id="h1mid">{{ getSubtopic }}</h1>
-    <p>{{getText}}</p>
+    <p id="MainText">{{getText}}</p>
   </div>
 </template>
 
@@ -36,8 +36,13 @@ export default {
   border-top: 1px solid #999999;
 }
 #h1mid{
+  text-align: left;
   padding-right: 15px;
   padding-left: 15px;
+}
+#MainText{
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 </style>

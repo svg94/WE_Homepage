@@ -1,7 +1,7 @@
 <template>
   <div class="rightBar">
     <p id="headP">Additional Information: Links to external sources</p>
-    <p v-for="(ref,index) in getRefs" :key="ref" :id="'source'+index">{{ref}}</p>
+    <p v-for="(ref,index) in getRefs" :key="ref" :id="'source'+index" class="refs">{{ref}}</p>
   </div>
 </template>
 
@@ -32,5 +32,9 @@ export default {
 }
 #headP{
   font-weight: bold;
+}
+.refs{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 </style>
