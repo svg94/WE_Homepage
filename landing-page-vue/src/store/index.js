@@ -7,6 +7,8 @@ export default new Vuex.Store({
     state: {
         currentTopic: "",
         currentSubTopic: "",
+        solActive: false,
+        solutionLink:"",
         webdata: {}
     },
     getters: {},
@@ -20,6 +22,10 @@ export default new Vuex.Store({
         emptyTopics(state){
             state.currentTopic = "";
             state.currentSubTopic ="";
+        },
+        setSolActive(state, arr){
+            state.solActive = arr[0];
+            state.solutionLink = arr[1];
         }
     }
 });

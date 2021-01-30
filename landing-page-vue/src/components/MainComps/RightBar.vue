@@ -15,7 +15,7 @@ export default {
       let printedText = "";
       if(topic !== "" && subtopic !== ""){
         printedText = this.$store.state.webdata[topic][subtopic]["references"];
-        console.log(printedText.toString());
+        //console.log(printedText.toString());
       }
       return printedText;
     }

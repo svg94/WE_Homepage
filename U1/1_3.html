@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <style>
         .vertical-menu {
             width: 200px;
@@ -10,7 +11,7 @@
         .vertical-menu a {
             background-color: #eee;
             color: black;
-            display: block;        <!-- Entscheidende Zeile in CSS -->
+            display: block;
             padding: 12px;
             text-decoration: none;
         }
@@ -26,17 +27,42 @@
     </style>
 </head>
 <body>
+<h1>So sieht eine geschachtelte Liste aus.</h1>
+<ol>
+    <li>Coffee</li>
+    <li>Tea
+        <ol>
+            <li>Black tea
+                <ol>
+                    <li>very black tea</li>
+                </ol>
+            </li>
+            <li>Green tea</li>
+        </ol>
+    </li>
+    <li>Milk</li>
+</ol>
 
-<h1>Vertical Menu</h1>
+<h1>So sieht eine Tabelle aus</h1>
+<table>
+    <tr>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Alter</th>
+    </tr>
+    <tr>
+        <td>Bojan</td>
+        <td>Savic</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Tim</td>
+        <td>Falter</td>
+        <td>27</td>
+    </tr>
+</table>
 
-<div class="vertical-menu">
-    <a href="#" class="active">Home</a>
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    <a href="#">Link 4</a>
-</div>
-
+<h1>So sieht ein Menü in reinem HTML aus</h1>
 <nav><h1>Navigation</h1>
     <ul>
         <li><a href="#">Erster Eintrag</a></li>
@@ -48,6 +74,19 @@
         </li>
     </ul>
 </nav>
+
+
+<h1>So könnte ein Menü mit HTML und CSS aussehen.</h1>
+
+<div class="vertical-menu">
+    <a href="#" class="active">Home</a>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+</div>
+
+
 
 </body>
 </html>

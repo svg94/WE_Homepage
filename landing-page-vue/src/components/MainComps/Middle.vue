@@ -1,7 +1,7 @@
 <template>
   <div class="middleMain" id="middleMain">
     <h1 id="h1mid">{{ getSubtopic }}</h1>
-    <button id="solutionB">Visit Solution</button>
+    <a :href="getLink" id="solutionB" v-if="isActive">Visit Solution</a>
     <div id="MainText" v-for="(question, index) in getQuestions" :key="index">
       <p class="question">{{question}}</p>
       <p class="answer" >{{getAnswers[index]}}</p>
@@ -18,8 +18,14 @@ export default {
       let subtopic = this.$store.state.currentSubTopic;
       let printedText = "";
       if(topic !== "" && subtopic !== ""){
-        printedText = this.$store.state.webdata[topic][subtopic]["content"][str];
-        console.log(printedText);
+        let subtopicData = this.$store.state.webdata[topic][subtopic];
+        printedText = subtopicData["content"][str];
+        this.$store.state.solutionLink = subtopicData["solutionpage"];
+        if(subtopicData["solutionpage"] !== ""){
+          this.$store.commit("setSolActive",[true, subtopicData["solutionpage"]]);
+        }else{
+          this.$store.commit("setSolActive",[false, ""]);
+        }
       }
       return printedText;
     }
@@ -34,8 +40,11 @@ export default {
     getAnswers(){
       return this.getText("answers");
     },
-    buttonNecessary(){
-      return true;      //TODO: Add Button only when theres a link showing sum solution.
+    getLink(){
+      return this.$store.state.solutionLink;
+    },
+    isActive(){
+      return this.$store.state.solActive;
     }
   }
 }
@@ -53,7 +62,6 @@ export default {
 .middleMain::-webkit-scrollbar{
   background: transparent;
   display: none;
-
 }
 .middleMain::-webkit-scrollbar-thumb{
   background-color: rgba(0, 0, 0, 0.5);
@@ -64,7 +72,6 @@ export default {
   padding-left: 15px;
 }
 #solutionB{
-  /*display: none;*/
   background-color: #a2a2a2;
   width: 30%;
   padding: 10px;

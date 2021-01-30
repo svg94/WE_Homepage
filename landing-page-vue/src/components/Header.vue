@@ -14,6 +14,7 @@ export default {
     displayLeftButtons(event){
       const topic = event.target.innerText;
       this.$store.commit("emptyTopics");
+      this.$store.commit("setSolActive",[false,""]);
       this.$store.commit("setCurrentTopic",topic);
     }
   },

@@ -24,6 +24,8 @@ export default {
     const fetchedData = await fetch("./json/data.json",{mode:"cors"});
     const toJson = await fetchedData.json();
     this.$store.state.webdata = toJson;
+    console.log(this.$store.state.solActive);
+    console.log(this.$store.state.currentTopic);
   }
 }
 </script>
