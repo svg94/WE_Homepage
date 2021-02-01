@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid-Champion</title>
+    <title>3-2: Grid responsive</title>
     <style>
         body{
             display:grid;
@@ -16,8 +16,8 @@
             display: none;
         }
         body {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;   /* IE and Edge */
+            scrollbar-width: none;      /* Firefox */
         }
         .header{
             background-color: #864747;
@@ -28,7 +28,6 @@
             order: 1;
             grid-template-rows: repeat(3, 300px);
             grid-template-columns: 1fr;
-            /*height: 2000px;*/
         }
         .main-middle{
             background-color: #1b4075;
@@ -52,7 +51,7 @@
             }
         }
         /*Desktop*/
-        @media screen and (min-width: 769px) {
+        @media screen and (min-width: 992px) {
             .secondRow{
                 grid-template-columns: 1fr 60% 1fr;
                 grid-template-rows: 700px;
@@ -68,20 +67,20 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Gridbox-Champion; Mobile-First</h1>
-    </div>
+<div class="header">
+    <h1>Grid-Champion; Mobile-First</h1>
+</div>
 
-    <div class="secondRow">
-        <div class="leftBar">
-            <h1>Lefty</h1>
-        </div>
-        <div class="main-middle">
-            <h1>main</h1>
-        </div>
-        <div class="rightBar">
-            <h1>Righty</h1>
-        </div>
+<div class="secondRow">
+    <div class="leftBar">
+        <h1>Lefty</h1>
     </div>
+    <div class="main-middle">
+        <h1>main</h1>
+    </div>
+    <div class="rightBar">
+        <h1>Righty</h1>
+    </div>
+</div>
 </body>
 </html>

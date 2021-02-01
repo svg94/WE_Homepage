@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox responsive</title>
+    <title>3-1: Flexbox responsive</title>
     <style>
         body{
             display: flex;
@@ -37,8 +37,8 @@
             flex: 70%;
             background-color: #1b4075;
         }
-        /*Tablet*/
-        @media screen and (max-width: 769px) {
+        /*Tablet  between 600 and 992px*/
+        @media screen and (max-width: 992px) {
             .secondRow{
                 flex-wrap: wrap;
             }
@@ -46,7 +46,7 @@
                 flex: 50%;
             }
         }
-        /*Mobile*/
+        /*Mobile between 0-600px */
         @media screen and (max-width: 600px) {
             .secondRow{
                 flex-wrap: wrap;
@@ -58,20 +58,20 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Flexbox-Champion; Desktop-First</h1>
-    </div>
+<div class="header">
+    <h1>Flexbox-Champion; Desktop-First</h1>
+</div>
 
-    <div class="secondRow">
-        <div class="leftBar">
-            <h1>Lefty</h1>
-        </div>
-        <div class="main-middle">
-            <h1>main</h1>
-        </div>
-        <div class="rightBar">
-            <h1>Righty</h1>
-        </div>
+<div class="secondRow">
+    <div class="leftBar">
+        <h1>Lefty</h1>
     </div>
+    <div class="main-middle">
+        <h1>main</h1>
+    </div>
+    <div class="rightBar">
+        <h1>Righty</h1>
+    </div>
+</div>
 </body>
 </html>

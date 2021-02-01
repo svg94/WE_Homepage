@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript is guhd</title>
+    <title>3-3: JavaScript is good</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Six+Caps">
     <style>
@@ -38,6 +38,9 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+        }
+        .hDiv:hover{
+            background-color: #7a7a7a;
         }
         #hDiv1{
             grid-row: 1;
@@ -86,18 +89,10 @@
             font-weight: bolder;
             font-size: 17px;
         }
-        #p1{
-            grid-row: 3;
-        }
-        #p2{
-            grid-row: 4;
-        }
-        #p3{
-            grid-row: 5;
-        }
-        #orderBtnDiv{
-            grid-row: 6;
-        }
+        #p1{grid-row: 3;}
+        #p2{grid-row: 4;}
+        #p3{grid-row: 5;}
+        #orderBtnDiv{grid-row: 6;}
         .footer{
             background-color: #122137;
             order: 2;
@@ -115,8 +110,11 @@
             font-weight: bold;
             font-family: "Trebuchet MS", Helvetica, sans-serif
         }
-        #orderBtn{
-
+        .orangeBtn:hover{
+            background-color: #f6a25f;
+        }
+        .orangeBtn:active{
+            background-color: #d06813;
         }
         #fBtn{
             padding: 10px 100px 10px 100px;
@@ -126,37 +124,19 @@
             .header{
                 grid-template-columns: repeat(4, 1fr);
             }
-            #hDiv1{
-                grid-column: 1;
-            }
-            #hDiv2{
-                grid-column: 2;
-            }
-            #hDiv3{
-                grid-column: 3;
-            }
-            #hDiv4{
-                grid-column: 4;
-            }
+            #hDiv1{grid-column: 1;}
+            #hDiv2{grid-column: 2;}
+            #hDiv3{grid-column: 3;}
+            #hDiv4{grid-column: 4;}
             .main{
                 grid-template-rows: repeat(14,1fr);
                 grid-template-columns: 100%;
             }
-            .pMain{
-                grid-column: 1;
-            }
-            #p1{
-                grid-row: 10;
-            }
-            #p2{
-                grid-row: 11;
-            }
-            #p3{
-                grid-row: 12;
-            }
-            #orderBtnDiv{
-                grid-row: 13;
-            }
+            .pMain{grid-column: 1;}
+            #p1{grid-row: 10;}
+            #p2{grid-row: 11;}
+            #p3{grid-row: 12;}
+            #orderBtnDiv{grid-row: 13;}
         }
 
     </style>
@@ -169,24 +149,21 @@
     <div class="hDiv" id="hDiv4">Free resources</div>
 </div>
 <div class="main">
- <h1 class="headerMain">You don't know JavaScript</h1>
+    <h1 class="headerMain">You don't know JavaScript</h1>
     <div class="BiigImgDiv">
         <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="Funny img of JS Book" class="BiigImg">
     </div>
-
     <p class="pMain" id="p1">Don't just drift through Javascript.</p>
     <p class="pMain" id="p2">Understand how Javascript works</p>
     <p class="pMain" id="p3">Start your journey through the bumpy side of Javascript</p>
     <div class="pMain" id="orderBtnDiv">
         <button class="orangeBtn" id="orderBtn">ORDER YOUR COPY NOW</button>
     </div>
-
 </div>
 <div class="footer">
     <br><br><br>
     <p class="fP">The first ebook in the book series is absolutely free.</p>
     <button class="orangeBtn" id="fBtn">FIND OUT MORE ABOUT THIS OFFER</button>
 </div>
-
 </body>
 </html>
