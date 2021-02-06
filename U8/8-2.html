@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Uebung 8_2</title>
+    <title>8-2_ async/await</title>
 </head>
 <body>
 <h1>Fetched Text right here:</h1>
@@ -28,8 +28,12 @@
         console.log(textData);
     }
     async function run(){
-        textData.push(await fetchText("./A.txt"));
-        textData.push(await fetchText("./B.txt"));
+        await Promise.all([
+            textData[0] = await fetchText("./A.txt"),
+            textData[1] = await fetchText("./B.txt")]
+        );
+        //textData.push(await fetchText("./A.txt"));
+        //textData.push(await fetchText("./B.txt"));
         splitAndBuild(textData);
     }
     run();

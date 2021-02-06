@@ -13,21 +13,21 @@
       ]
     },
     "tables": {
-      "content": "Das <p>-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann <p> jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+      "content": "Das HTML-Tabellen-Element (<table>) repräsentiert Daten in zwei oder mehr Dimensionen.\nHinweis: Bevor es CSS gab, wurden HTML-<table>-Elemente oft für das Seitenlayout verwendet. Von dieser Nutzung wird seit HTML 4 abgeraten, und das <table>-Element sollte nicht für Layoutzwecke verwendet werden.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+        "https://developer.mozilla.org/de/docs/Web/HTML/Element/table"
       ]
     },
     "lists": {
-      "content": "Das <p>-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann <p> jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+      "content": "HTML lists allow web developers to group a set of related items in lists.An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.\n\nThe list items will be marked with bullets (small black circles) by default. An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.\n\nThe list items will be marked with numbers by default.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+        "https://www.w3schools.com/html/html_lists.asp"
       ]
     },
     "images": {
-      "content": "Das <p>-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann <p> jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+      "content": "The HTML <img> tag is used to embed an image in a web page.\n\nImages are not technically inserted into a web page; images are linked to web pages. The <img> tag creates a holding space for the referenced image.\n\nThe <img> tag is empty, it contains attributes only, and does not have a closing tag.\n\nThe <img> tag has two required attributes:\n\n    src - Specifies the path to the image\n    alt - Specifies an alternate text for the image\n",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+        "https://www.w3schools.com/html/html_images.asp"
       ]
     }
   },
@@ -44,22 +44,22 @@
         "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
       ]
     },
-    "selectors2": {
-      "content": "Selektoren definieren, auf welche Elemente eine Reihe von CSS Regeln angewendet wird.",
+    "grid": {
+      "content": "The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning. A grid layout consists of a parent element, with one or more child elements. An HTML element becomes a grid container when its display property is set to grid or inline-grid. All direct children of the grid container automatically become grid items.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors"
+        "https://www.w3schools.com/css/css_grid.asp"
       ]
     },
-    "colors2": {
-      "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
+    "flexbox": {
+      "content": "Before the Flexbox Layout module, there were four layout modes:\n\n    Block, for sections in a webpage\n    Inline, for text\n    Table, for two-dimensional table data\n    Positioned, for explicit position of an element\n\nThe Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+        "https://www.w3schools.com/css/css3_flexbox.asp"
       ]
     },
-    "colors3": {
-      "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
+    "fonts": {
+      "content": "In CSS there are five generic font families:\n\n    Serif fonts have a small stroke at the edges of each letter. They create a sense of formality and elegance.\n    Sans-serif fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.\n    Monospace fonts - here all the letters have the same fixed width. They create a mechanical look. \n    Cursive fonts imitate human handwriting.\n    Fantasy fonts are decorative/playful fonts.\n\nAll the different font names belong to one of the generic font families. ",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+        "https://www.w3schools.com/css/css_font.asp"
       ]
     }
   },
@@ -76,19 +76,19 @@
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
       ]
     },
-    "function2": {
+    "callbacks": {
       "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
       "references": [
         "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
       ]
     },
-    "object2": {
+    "promises": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": [
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
       ]
     },
-    "object3": {
+    "async/await": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": [
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
@@ -96,31 +96,31 @@
     }
   },
   "other": {
-    "function": {
+    "frameworks": {
       "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
       "references": [
         "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
       ]
     },
-    "object": {
+    "fetch-API": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": [
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
       ]
     },
-    "function2": {
+    "node": {
       "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
       "references": [
         "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
       ]
     },
-    "object2": {
+    "DOM": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": [
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
       ]
     },
-    "object3": {
+    "w3.org": {
       "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
       "references": [
         "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Uebung 8_1</title>
+    <title>8.1: Promises</title>
 </head>
 <body>
 <h1>Fetched Text right here:</h1>
@@ -12,6 +12,16 @@
     let textData = [];
 
     function fetchText(url,url2,arr){
+        Promise.all([
+            fetch(url)
+                .then(response => response.text())
+                .then(data => arr[0]=data),
+            fetch(url2)
+                .then(response => response.text())
+                .then(data => arr[1]=data)
+        ]).then(()=>splitAndBuild(arr));
+    }
+    /*function fetchText2(url,url2,arr){        //Nicht maximal parallel. Aber auch eine funktionierende Lösung.
         fetch(url)
             .then(response => response.text())
             .then(data => arr.push(data))
@@ -19,7 +29,7 @@
                 .then(response => response.text())
                 .then(data => arr.push(data)))
             .then(()=>splitAndBuild(arr));
-    }
+    }*/
     function splitAndBuild(arr){
         let spliitedA = arr[0].split("\r\n");
         let spliitedB = arr[1].split("\r\n");
