@@ -3,11 +3,17 @@ function identity_function(x){
         return x;
     }
 }
+//Als Arrow-function
+const identity_function_ = x => _ => x;
+
 function addf(x){
     return function(y){
         return x+y;
     }
 }
+//Als Arrow-function
+const addf_ = x => y => x+y;
+
 function applyf(op){
     return function(x){
         return function(y){
@@ -15,19 +21,28 @@ function applyf(op){
         }
     }
 }
+//Als Arrow-function
+const applyf_= op => x => y => op(x,y);
+
 function curry(op, x){
     return function(y){
         return op(x,y);
     }
 }
+//Als Arrow-function
+const curry_ = (op,x) => y => op(x,y);
+
 function add(x,y){
     return x+y;
 };
-function addfInc(x){
-    return function(){
-        return x+1;
-    }
-}
+//Als Arrow-function
+const add_ = (x,y) => x+y;
+
+//Alle drei geforderten Varianten der Inc-Funktion;
+const addfInc = addf_(1);
+const applyfInc = applyf_(add)(1);
+const curryInc = curry(add,1);
+
 function methodize(op){
     return function(y){
         return op(this,y);
@@ -35,8 +50,7 @@ function methodize(op){
 }
 function demethodize(op){
     return function (x,y){
-        //return x.op(y);
-        return 0;
+        return op.call(x,y);
     }
 }
 function twice(op){
@@ -57,8 +71,8 @@ function composeb(op1,op2) {
 function mult(x,y){
     return x*y;
 }
-var once = (function (){        //Closure
-   var execution = false;
+const once = (function (){        //Closure
+   let execution = false;
    return function(op){
        if(!execution){
            execution = true;
@@ -70,8 +84,8 @@ var once = (function (){        //Closure
        }
    }
 }());
-var counterf =(function (x){
-    var counter = x;
+const counterf =(function (x){
+    let counter = x;
     return {
         inc : function(){
             return ++counter;
@@ -81,8 +95,8 @@ var counterf =(function (x){
         }
     };
 });
-var revocable = (function(action){
-    var revoked = false;
+const revocable = (function(action){
+    let revoked = false;
     return{
         invoke: function(x){
           if(revoked){
@@ -96,14 +110,14 @@ var revocable = (function(action){
 
     };
 });
-var wrapper = (function(){
-    var arr = [1,2,3];
+let wrapper = (function(){
+    let arr = [];
     return{
-        get: function(){
-            return arr;
+        get: function(i){
+            return arr[i];
         },
-        store: function(toStore){
-            arr.push(toStore);
+        store: function(index,toStore){
+            arr[index] = toStore;
         },
         append: function(toStore){
             arr.push(toStore);
@@ -112,7 +126,7 @@ var wrapper = (function(){
 });
 
 
-var stuff = revocable(console.log);
+let stuff = revocable(console.log);
 stuff.invoke(7);
 stuff.revoke();
 stuff.invoke(8);
@@ -120,8 +134,8 @@ stuff.invoke(8);
 Number.prototype.add = methodize(add);
 //console.log((3).add(4));
 //console.log(demethodize(Number.prototype.add)(0,2));
-var double = twice(add);
-var square=twice(mult);
+let double = twice(add);
+let square=twice(mult);
 console.log(once(add)(2,3));
 //console.log(once(add)(2,3));
 //console.log(once());

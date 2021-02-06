@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-1</title><style>
+    body{
+        text-align: center;
+        background-color: darkgrey;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to 6.1</h1>
+<p>Take a look to the console my friend.</p>
+<script>
+    function identity_function(x){
+        return function(){
+            return x;
+        }
+    }
+    //Als Arrow-function
+    const identity_function_ = x => _ => x;
+
+    function addf(x){
+        return function(y){
+            return x+y;
+        }
+    }
+    //Als Arrow-function
+    const addf_ = x => y => x+y;
+
+    function applyf(op){
+        return function(x){
+            return function(y){
+                return op(x,y);
+            }
+        }
+    }
+    //Als Arrow-function
+    const applyf_= op => x => y => op(x,y);
+
+    function curry(op, x){
+        return function(y){
+            return op(x,y);
+        }
+    }
+    //Als Arrow-function
+    const curry_ = (op,x) => y => op(x,y);
+
+    function add(x,y){
+        return x+y;
+    };
+    //Als Arrow-function
+    const add_ = (x,y) => x+y;
+
+    //Alle drei geforderten Varianten der Inc-Funktion;
+    const addfInc = addf_(1);
+    const applyfInc = applyf_(add)(1);
+    const curryInc = curry(add,1);
+
+    function methodize(op){
+        return function(y){
+            return op(this,y);
+        }
+    }
+    function demethodize(op){
+        return function (x,y){
+            return op.call(x,y);
+        }
+    }
+    function twice(op){
+        return function(x){
+            return op(x,x);
+        }
+    }
+    function composeu(op1,op2){
+        return function(x){
+            return op2(op1(x));
+        }
+    }
+    function composeb(op1,op2) {
+        return function (x, y, z) {
+            return op2(op1(x, y), z);
+        }
+    }
+    function mult(x,y){
+        return x*y;
+    }
+    const once = (function (){        //Closure
+        let execution = false;
+        return function(op){
+            if(!execution){
+                execution = true;
+                return function(x,y){
+                    return op(x,y);
+                };
+            }else{
+                throw "Error. Tried more than once.";
+            }
+        }
+    }());
+    const counterf =(function (x){
+        let counter = x;
+        return {
+            inc : function(){
+                return ++counter;
+            },
+            dec : function(){
+                return --counter;
+            }
+        };
+    });
+    const revocable = (function(action){
+        let revoked = false;
+        return{
+            invoke: function(x){
+                if(revoked){
+                    throw "Error. Revoked"
+                }
+                return action(x);
+            },
+            revoke: function (){
+                revoked = true;
+            }
+
+        };
+    });
+    let wrapper = (function(){
+        let arr = [];
+        return{
+            get: function(i){
+                return arr[i];
+            },
+            store: function(index,toStore){
+                arr[index] = toStore;
+            },
+            append: function(toStore){
+                arr.push(toStore);
+            }
+        }
+    });
+
+
+    let stuff = revocable(console.log);
+    stuff.invoke(7);
+    stuff.revoke();
+    stuff.invoke(8);
+
+    Number.prototype.add = methodize(add);
+    //console.log((3).add(4));
+    //console.log(demethodize(Number.prototype.add)(0,2));
+    let double = twice(add);
+    let square=twice(mult);
+    console.log(once(add)(2,3));
+    //console.log(once(add)(2,3));
+    //console.log(once());
+    let ctr = counterf(20);
+    console.log(ctr.inc());
+    console.log(ctr.dec());
+    console.log(composeu(double,square)(3));
+    console.log(composeb(add,mult)(2,3,5));
+    //console.log(double(11));
+    //console.log(curry(add,5)(6));
+
+</script>
+</body>
+</html>
