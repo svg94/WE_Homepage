@@ -22,9 +22,9 @@ let toCopy ={
 shouldBeDeepCopied = deepCopy(toCopy);
 
 //assert
-console.assert(toCopy !== shouldBeDeepCopied); //shouldnt be the same object
+console.assert(toCopy !== shouldBeDeepCopied); //shouldnt be the same object but with exact same content
 
-console.log("Not copied object \n", toCopy);
+console.log("Not copied (origin) object \n", toCopy);
 console.log("deepCopied object: \n", shouldBeDeepCopied);
 
 function checkForContentEquality(array2D_1,array2D_2){     //For 2D-Arrays

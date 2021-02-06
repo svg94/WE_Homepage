@@ -1,4 +1,4 @@
-//Same Class but with generator instead naked iterator
+//Same Class but with generator instead of naked iterator
 class Vorrang{
     constructor(dependencies) {
         this.deps = dependencies;

@@ -96,43 +96,10 @@ const handler={
     }
 };
 
-let v1 = new Vorrang([["studieren", "schlafen"],["essen", "prüfen"]]);
+let v1 = new Vorrang([["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"]]);
 
 const proxyVorrang = new Proxy(v1,handler);
 proxyVorrang.sorted();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const studentenLeben = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
@@ -140,4 +107,3 @@ const studentenLeben = new Vorrang([ ["schlafen", "studieren"], ["essen", "studi
 for ( const next of studentenLeben ){
     console.log( next );
 }
-
