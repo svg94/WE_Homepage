@@ -83,47 +83,47 @@
       ]
     },
     "promises": {
-      "content": "\"Producing code\" is code that can take some time\n\n\"Consuming code\" is code that must wait for the result\n\nA Promise is a JavaScript object that links producing code and consuming code",
+      "content": "\"Producing code\" is code that can take some time\n\n\"Consuming code\" is code that must wait for the result\n\nA Promise is a JavaScript object that links producing code and consuming code. Promises have three states: pendings, resolved and rejected.",
       "references": [
         "https://www.w3schools.com/js/js_promise.asp"
       ]
     },
     "async/await": {
-      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+      "content": "async and await are keywords for allowing an easier operation with Promises. \n\n\"async and await make promises easier to write\"\n\nasync makes a function return a Promise\n\nawait makes a function wait for a Promise\n",
       "references": [
-        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        "https://www.w3schools.com/js/js_async.asp"
       ]
     }
   },
   "other": {
     "frameworks": {
-      "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+      "content": "A Framework is a platform for developing software applications. Frameworks allow a developer to be able to focus on business logic. A framework offers built-in functions for functionality on a lower level. There are currently three popular frontend frameworks for javascript: Vue, Angular and React.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+        "https://hackr.io/blog/what-is-frameworks"
       ]
     },
-    "fetch-API": {
-      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+    "fetch-api": {
+      "content": "Die Fetch API bietet eine Schnittstelle zum Abrufen von Ressourcen (auch über das Netzwerk). Wer schon einmal mit XMLHttpRequest gearbeitet hat wird Ähnlichkeiten erkennen. Die neue API bietet jedoch einen ganzen Satz leistungsfähigerer und flexiblerer Funktionen.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        "https://developer.mozilla.org/de/docs/Web/API/Fetch_API"
       ]
     },
     "node": {
-      "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+      "content": "What is Node.js?\n\n    Node.js is an open source server environment\n    Node.js is free\n    Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)\n    Node.js uses JavaScript on the server\n Why Node.js?\n\nNode.js uses asynchronous programming!\n\nA common task for a web server can be to open a file on the server and return the content to the client.\n\nHere is how PHP or ASP handles a file request:\n\n    Sends the task to the computer's file system.\n    Waits while the file system opens and reads the file.\n    Returns the content to the client.\n    Ready to handle the next request.\n\nHere is how Node.js handles a file request:\n\n    Sends the task to the computer's file system.\n    Ready to handle the next request.\n    When the file system has opened and read the file, the server returns the content to the client.\n\nNode.js eliminates the waiting, and simply continues with the next request.\n\nNode.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+        "https://www.w3schools.com/nodejs/nodejs_intro.asp"
       ]
     },
-    "DOM": {
-      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+    "dom": {
+      "content": "Das DOM verbindet Javascript mit den HTML-Elementen und erzeugt eine Baumstruktur, in der jedes HTML-Element eindeutig erreicht wird. Jedes HTML-Element hat seine eigene Schnittstelle im Document Object Model, die Eigenschaften (i.d.R. Attribute des HTML-Elements) und Methoden für Javascript definiert.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        "https://www.mediaevent.de/javascript/DOM.html"
       ]
     },
     "w3.org": {
-      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+      "content": "Das World Wide Web Consortium (kurz W3C) ist das Gremium zur Standardisierung der Techniken im World Wide Web. Es wurde am 1. Oktober 1994 am MIT Laboratory for Computer Science in Cambridge (Massachusetts) gegründet.\n\nDas W3C ist eine Mitgliedsorganisation. Gründer und Vorsitzender ist Tim Berners-Lee, der als Erfinder des World Wide Web gilt. Das W3C entwickelt technische Spezifikationen und Richtlinien in einem ausgereiften, transparenten Prozess, um maximalen Konsens über den Inhalt technischer Protokolle, hohe technische und redaktionelle Qualität und Zustimmung durch das W3C und seine Anhängerschaft zu erzielen.",
       "references": [
-        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        "https://de.wikipedia.org/wiki/World_Wide_Web_Consortium"
       ]
     }
   }
