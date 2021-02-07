@@ -301,8 +301,8 @@
   },
   "Übung 10": {
     "10.1": {
-      "content": {"questions": ["Registrierungsformular"],
-        "answers": ["Yes"]
+      "content": {"questions": ["Erstellen Sie mit PHP 5 auf www2.inf.h-brs.de ein Registrierungsformular. Speichern Sie die eingegebenen Daten persistent in einer Datei auf www2.inf.h-brs.de. Schreiben Sie Ihre PHP-Scripte so, dass es zu keinen Nebenläufigkeitsartefakten (z.B. Lost Update) kommen kann, egal wie viele Nutzer sich gleichzeitig registrieren. "],
+        "answers": ["<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Register</title>\n\n</head>\n<body>\n    <form method=\"post\">\n        <fieldset>\n            <legend>Register new Account:</legend>\n            Account name:<br>\n            <input type=\"text\" placeholder=\"Name\" name=\"account\">\n            <br>\n            Password:<br>\n            <input type=\"password\" placeholder=\"12345\" name=\"password\">\n            <br><br>\n            <input type=\"submit\" value=\"Submit\">\n        </fieldset>\n    </form>\n<?php\n    if( isset($_POST['account'])&& isset($_POST['password'])){\n        $account = $_POST['account'];\n        $password = $_POST['password'];\n        $file = './accountData.csv';\n        $new_line =  hash(\"sha384\",$account) . ',' . hash(\"sha384\",$password) . PHP_EOL;\n\n        if( file_put_contents($file, $new_line, FILE_APPEND | LOCK_EX)){\n            echo \"<script> alert(\\\"Registered successfully!\\\") </script>\";\n        }\n    }\n?>\n</body>\n</html>\n"]
       },
       "references": [
         "Folie 38 Kapitel 10"
@@ -310,8 +310,8 @@
       "solutionpage": "./Homepage/U10/10-1.php"
     },
     "10.2": {
-      "content": {"questions": ["Login"],
-        "answers": ["Yes"]
+      "content": {"questions": ["Schreiben Sie eine sichere PHP-Lösung für Login, das die persistierten Registrierungsdaten aus der letzten Aufgabe nutzt. "],
+        "answers": ["<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Login</title>\n\n</head>\n<body>\n<form method=\"post\">\n    <fieldset>\n        <legend>Login:</legend>\n        Account name:<br>\n        <input type=\"text\" placeholder=\"Name\" name=\"account\">\n        <br>\n        Password:<br>\n        <input type=\"password\" placeholder=\"12345\" name=\"password\">\n        <br><br>\n        <input type=\"submit\" value=\"Login\">\n    </fieldset>\n</form>\n<?php\nif( isset($_POST['account'])&& isset($_POST['password'])){\n    $account = $_POST['account'];\n    $password = $_POST['password'];\n    $UserAccount =  hash(\"sha384\",$account) . ',' . hash(\"sha384\",$password);\n\n    $file = './accountData.csv';\n    $data = file_get_contents($file);\n    $dataLines = explode(PHP_EOL,$data);\n    array_pop($dataLines);\n\n    foreach ($dataLines as $account){\n        if(strcmp($account,$UserAccount) === 0){\n            echo \"Login successful\";\n            return;\n        }\n    }\n    echo \"Login unsuccessful\";\n}\n?>\n</body>\n</html>\n"]
       },
       "references": [
         ""
@@ -319,13 +319,13 @@
       "solutionpage": "./Homepage/U10/10-2.php"
     },
     "10.3": {
-      "content": {"questions": [],
-        "answers": []
+      "content": {"questions": ["Bauen Sie Ihren WWW-Navigator zum Content-Editor aus, mit dem Sie weitere Inhalte hinzu fügen können, die persistent auf dem Server mittels PHP gespeichert werden. Schreiben Sie Ihre PHP-Scripte so, dass es zu keinen Nebenläufigkeitsartefakten kommen kann, egal wie viele Nutzer gleichzeitig editieren und speichern.\n\nSpeichern Sie die Inhalte Ihres WWW-Navigators auf dem Server www2.inf.h-brs.de. Erweitern Sie Ihren WWW-Navigator um eine Edit-Funktionalität, so dass Inhalte editiert und ergänzt werden können. Vermeiden Sie die Lost Update-Anomalie.\n\nSchützen Sie Ihre Inhalte mit einem Login. "],
+        "answers": ["/"]
       },
       "references": [
         ""
       ],
-      "solutionpage": "Yes"
+      "solutionpage": ""
     }
   }
 }
