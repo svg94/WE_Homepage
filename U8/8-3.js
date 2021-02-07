@@ -17,6 +17,7 @@ function fillButtonNames(){
     const topic = this.innerText.toLowerCase();
     for(let i = 0; i < 5; i++){
         //leftButtons[i].innerText = "";
+        leftButtons.forEach(button=>button.style.visibility="visible");
         leftButtons[i].innerText = Object.keys(data[topic])[i];
     }
     currentTopic = topic;

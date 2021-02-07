@@ -77,15 +77,15 @@
       ]
     },
     "callbacks": {
-      "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+      "content": "A callback is a function passed as an argument to another function\n\nThis technique allows a function to call another function\n\nA callback function can run after another function has finished",
       "references": [
-        "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+        "https://www.w3schools.com/js/js_callback.asp"
       ]
     },
     "promises": {
-      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+      "content": "\"Producing code\" is code that can take some time\n\n\"Consuming code\" is code that must wait for the result\n\nA Promise is a JavaScript object that links producing code and consuming code",
       "references": [
-        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        "https://www.w3schools.com/js/js_promise.asp"
       ]
     },
     "async/await": {
