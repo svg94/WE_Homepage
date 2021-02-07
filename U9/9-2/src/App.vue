@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Menu alignment="row" horizontal=true></Menu>
+    <Menu v-bind:horizontal="true"></Menu>
     <br>
-    <Menu alignment="column" ></Menu>
+    <Menu v-bind:horizontal="false"></Menu>
   </div>
 </template>
 

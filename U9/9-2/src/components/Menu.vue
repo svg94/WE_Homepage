@@ -1,5 +1,5 @@
 <template>
-  <div id="flexbox" :style="how" v-bind:class="{horizontal: isHorizontal, vertical: isVertical}">
+  <div id="flexbox" v-bind:class="{horizontal: isHorizontal, vertical: isVertical}">
 
     <a href="">Start</a>
     <a href="">Story</a>

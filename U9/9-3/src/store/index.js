@@ -20,8 +20,6 @@ export default new Vuex.Store({
         emptyTopics(state){
             state.currentTopic = "";
             state.currentSubTopic ="";
-            state.solutionLink= "";
-            state.solActive= ""
         }
     }
 });
