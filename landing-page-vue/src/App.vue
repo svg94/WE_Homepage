@@ -44,15 +44,19 @@ export default {
   grid-template-rows: 10% 85% 5%;
   grid-template-columns: auto;
 }
+@media screen and (max-width: 767px) {
+  body{
+    margin: 0;
+  }
+}
 @media screen and (max-height: 940px){
   #app{
     grid-template-rows: 13% 80% 5%;
   }
   @media screen and (max-width: 990px) {
     #app{
-      grid-template-rows: 15% 80% 5%;
+      grid-template-rows: 13% 80% 5%;
     }
   }
-
 }
 </style>

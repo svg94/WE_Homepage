@@ -100,5 +100,13 @@ export default {
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
-
+@media screen and (max-width: 767px) {
+  .middleMain{
+    grid-column: 1;
+    grid-row: 4 / span 15;
+    border: none;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+  }
+}
 </style>

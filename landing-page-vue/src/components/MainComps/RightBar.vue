@@ -41,4 +41,10 @@ export default {
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
+@media screen and (max-width: 767px) {
+  .rightBar{
+    grid-column: 1;
+    grid-row: 18 / span 3;
+  }
+}
 </style>

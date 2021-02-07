@@ -60,4 +60,24 @@ export default {
 #bleft0{
   margin-top: 10px;
 }
+@media screen and (max-width: 767px) {
+  .leftBar{
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #bleft0{
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .bleft{
+    width: 30%;
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
 </style>

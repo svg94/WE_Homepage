@@ -67,5 +67,33 @@ export default {
     background-color: #568679;
     transform: rotate(5deg);
   }
+  @media screen and (max-width: 767px) {
+    .header{
 
+    }
+    .header .head1{
+      margin: 0px;
+      margin-top: 5px;
+    }
+    .header .head2{
+      background-color: #7fb0a3;
+    }
+    .hB{
+      border: none;
+      border-top: 1px solid #569d8f;
+      border-bottom: 1px solid #487e73;
+      border-radius: 0px;
+      margin: 0px;
+      height: 100%;
+    }
+    .hB:active{
+      transform: rotate(0deg);
+    }
+  }
+  @media screen and (max-width: 900px){
+    .header .head1{
+      margin: 0px;
+      margin-top: 5px;
+    }
+  }
 </style>

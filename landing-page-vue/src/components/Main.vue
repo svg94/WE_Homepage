@@ -29,7 +29,8 @@ export default {
 }
 @media screen and (max-width: 767px) {
   .Main{
-    /*flex-direction: column;*/
+    grid-template-rows: repeat(20,5%);
+    grid-template-columns: auto;
   }
 }
 </style>
