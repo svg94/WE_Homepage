@@ -85,8 +85,8 @@ async function fetchData(url){
     return await data.json();
 }
 async function run(){
-    data = await fetchData("./Homepage/IndexStatic/data.json");
-    //data = await fetchData("./data.json");
+    //data = await fetchData("./Homepage/IndexStatic/data.json");
+    data = await fetchData("./data.json");
     topButtons.forEach(btn =>btn.addEventListener("click", fillButtonNames));
     leftButtons.forEach(btn => {
         btn.addEventListener("click",placeContent);
